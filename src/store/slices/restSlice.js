@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-let finished = false
+let finished = 0
 const initialState = {
     status: null,
     error: null,
@@ -15,8 +15,8 @@ export const fetchRest = createAsyncThunk(
         try {
             const response = await fetch('https://random-data-api.com/api/restaurant/random_restaurant?size=100')
             const data = await response.json()
-            finished =!finished
-            if(finished){
+            finished ++
+            if(finished = 0){
             return data;
             }
         } catch (error) {
